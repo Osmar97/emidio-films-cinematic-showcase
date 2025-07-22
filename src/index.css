@@ -2,41 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* EMIDIO FILMS - Luxury Design System
+Cinematic, elegant, premium aesthetic with muted palette
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Pure whites and charcoal */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 210 9% 15%;
+    
+    /* Card surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 210 9% 15%;
+    
+    /* Popover surfaces */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 210 9% 15%;
+    
+    /* Charcoal primary */
+    --primary: 210 9% 15%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Soft grays */
+    --secondary: 210 17% 96%;
+    --secondary-foreground: 210 9% 15%;
+    
+    /* Muted tones */
+    --muted: 210 17% 96%;
+    --muted-foreground: 210 6% 46%;
+    
+    /* Gold accent */
+    --accent: 41 85% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs */
+    --border: 210 17% 90%;
+    --input: 210 17% 90%;
+    --ring: 41 85% 45%;
+    
+    /* Radius for minimal feel */
+    --radius: 0.25rem;
+    
+    /* Custom luxury tokens */
+    --gold: 41 85% 45%;
+    --charcoal: 210 9% 15%;
+    --soft-gray: 210 17% 96%;
+    --warm-white: 45 29% 97%;
+    
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 30px hsla(210, 9%, 15%, 0.05);
+    --shadow-medium: 0 8px 60px hsla(210, 9%, 15%, 0.08);
+    --shadow-strong: 0 20px 80px hsla(210, 9%, 15%, 0.12);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +130,81 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Custom luxury components */
+  .cinematic-hero {
+    @apply relative h-screen w-full overflow-hidden;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition-smooth);
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .nav-glass {
+    backdrop-filter: blur(20px);
+    background: hsla(0, 0%, 100%, 0.9);
+    border-bottom: 1px solid hsla(210, 17%, 90%, 0.3);
+  }
+  
+  .play-button {
+    @apply w-20 h-20 rounded-full border-2 border-white/30 backdrop-blur-sm;
+    background: hsla(0, 0%, 100%, 0.1);
+    transition: var(--transition-smooth);
+  }
+  
+  .play-button:hover {
+    @apply border-white/60 scale-110;
+    background: hsla(0, 0%, 100%, 0.2);
+  }
+  
+  .serif-display {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  
+  .editorial-layout {
+    @apply max-w-6xl mx-auto px-8 lg:px-16;
+  }
+  
+  .luxury-button {
+    @apply px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide;
+    transition: var(--transition-smooth);
+    letter-spacing: 0.05em;
+  }
+  
+  .luxury-button:hover {
+    @apply bg-accent text-accent-foreground;
+    transform: translateY(-2px);
+  }
+  
+  .gold-accent {
+    color: hsl(var(--gold));
+  }
+  
+  .image-overlay {
+    background: linear-gradient(135deg, hsla(210, 9%, 15%, 0.3), hsla(210, 9%, 15%, 0.1));
   }
 }
