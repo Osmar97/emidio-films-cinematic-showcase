@@ -20,8 +20,6 @@ const About = () => {
         <div className="editorial-layout">
           <div className={`fade-in ${isLoaded ? 'visible' : ''}`}>
             <h1 className="serif-display text-6xl md:text-8xl mb-8 font-light">
-              Who We Are
-              <br />
               <span className="italic">Emídio Films</span>
             </h1>
           </div>
