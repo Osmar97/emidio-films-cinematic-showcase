@@ -20,7 +20,7 @@ const About = () => {
         <div className="editorial-layout">
           <div className={`fade-in ${isLoaded ? 'visible' : ''}`}>
             <h1 className="serif-display text-6xl md:text-8xl mb-8 font-light">
-              <span className="italic">Who We Are</span>
+              <span className="italic">Who We Arbe</span>
             </h1>
           </div>
         </div>
