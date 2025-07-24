@@ -40,10 +40,6 @@ const HeroSection = () => {
               Luxury wedding and commercial videography that captures the essence of your most precious moments
             </p>
 
-            {/* Play Button */}
-            <button className="play-button flex items-center justify-center mx-auto group">
-              <Play className="w-8 h-8 ml-1 text-white group-hover:scale-110 transition-transform duration-300" fill="white" />
-            </button>
           </div>
         </div>
       </div>
