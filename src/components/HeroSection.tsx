@@ -12,13 +12,17 @@ const HeroSection = () => {
 
   return (
     <section className="cinematic-hero">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage}
-          alt="Cinematic wedding scene"
+        <video 
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src={heroImage} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
