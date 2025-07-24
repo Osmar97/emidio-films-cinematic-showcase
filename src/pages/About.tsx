@@ -20,9 +20,9 @@ const About = () => {
         <div className="editorial-layout">
           <div className={`fade-in ${isLoaded ? 'visible' : ''}`}>
             <h1 className="serif-display text-6xl md:text-8xl mb-8 font-light">
-              Meet
+              Who We Are
               <br />
-              <span className="italic">Emidio</span>
+              <span className="italic">Emídio Films</span>
             </h1>
           </div>
         </div>
@@ -47,37 +47,31 @@ const About = () => {
             <div className={`fade-in ${isLoaded ? 'visible' : ''}`} style={{ transitionDelay: '0.4s' }}>
               <div className="space-y-8 text-lg leading-relaxed">
                 <div>
-                  <h2 className="serif-display text-3xl mb-6">The Story Behind the Lens</h2>
                   <p className="text-muted-foreground">
-                    For over a decade, I've been captivated by the power of visual storytelling. 
-                    What began as a passion for capturing fleeting moments has evolved into a 
-                    dedicated craft of creating cinematic narratives that transcend time.
+                    Emídio Films is an audiovisual production company that transforms ideas into 
+                    stories that inspire, move, and sell.
                   </p>
                 </div>
 
                 <div>
                   <p className="text-muted-foreground">
-                    Based between New York and destinations worldwide, I specialize in luxury 
-                    weddings and commercial projects that demand both technical excellence and 
-                    artistic vision. Each project is approached with meticulous attention to 
-                    detail and a deep understanding of the emotions that drive every story.
+                    We work in the areas of real estate video, promotional videos for brands and 
+                    local businesses, content creation for social media, events and lifestyle, 
+                    always with a creative, simple and authentic approach.
                   </p>
                 </div>
 
                 <div>
                   <p className="text-muted-foreground">
-                    My work has been featured in leading publications and has taken me to some 
-                    of the world's most beautiful locations. But beyond the accolades, what 
-                    drives me is the privilege of documenting life's most precious moments – 
-                    those genuine, unguarded instances that reveal the essence of human connection.
+                    We believe in the power of simplicity to create images that connect people, 
+                    reveal the essence of each project and strengthen brands both digitally and beyond.
                   </p>
                 </div>
 
                 <div className="pt-8">
-                  <h3 className="serif-display text-2xl mb-4">Philosophy</h3>
-                  <p className="text-muted-foreground italic">
-                    "Every frame should serve the story. Every story deserves to be told with 
-                    honesty, beauty, and respect for the emotions it carries."
+                  <p className="text-muted-foreground">
+                    More than beautiful videos, we deliver content that generates real impact and 
+                    results for those who trust our work.
                   </p>
                 </div>
               </div>
