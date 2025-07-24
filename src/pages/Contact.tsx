@@ -138,10 +138,15 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-accent" />
                     <span>hello@emidiofilms.com</span>
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <a 
+                    href="https://wa.me/351930532501" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-4 hover:text-accent transition-colors cursor-pointer"
+                  >
                     <Phone className="w-5 h-5 text-accent" />
                     <span>+351 930 532 501</span>
-                  </div>
+                  </a>
                   <div className="flex items-center space-x-4">
                     <MapPin className="w-5 h-5 text-accent" />
                     <span>Lisbon</span>
