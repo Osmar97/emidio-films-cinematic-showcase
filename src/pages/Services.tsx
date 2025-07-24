@@ -13,43 +13,43 @@ const Services = () => {
 
   const services = [
     {
-      title: "Wedding Films",
-      description: "Cinematic storytelling that captures the essence of your special day",
+      title: "Real Estate Video & Photography",
+      description: "Professional real estate content that showcases properties at their best",
       features: [
-        "Full day coverage",
-        "Highlight reel (3-5 minutes)",
-        "Extended cut (20-30 minutes)",
-        "Raw ceremony footage",
-        "Professional color grading",
-        "Licensed music selection"
+        "Real estate video filming and editing",
+        "Aerial drone footage capture",
+        "Real estate photography",
+        "Property walkthroughs",
+        "Aerial perspectives",
+        "Professional editing and color grading"
       ],
-      startingPrice: "From $8,500"
+      startingPrice: "Contact for pricing"
     },
     {
-      title: "Commercial Video",
-      description: "Premium brand storytelling for luxury businesses and products",
+      title: "Brand & Business Videos",
+      description: "Promotional content that elevates your brand and drives results",
       features: [
-        "Concept development",
-        "Professional crew",
-        "Multiple format delivery",
-        "Social media optimization",
-        "Brand guideline adherence",
-        "Usage rights included"
+        "Promotional videos for brands and local businesses",
+        "Product photography and videography",
+        "Brand storytelling",
+        "Commercial content creation",
+        "Professional concept development",
+        "Multi-platform optimization"
       ],
-      startingPrice: "From $15,000"
+      startingPrice: "Contact for pricing"
     },
     {
-      title: "Editorial Photography",
-      description: "Sophisticated imagery for publications and personal projects",
+      title: "Social Media & Creative Content",
+      description: "Engaging content designed for modern digital platforms",
       features: [
-        "Art direction",
-        "Professional retouching",
-        "High-resolution delivery",
-        "Print release included",
-        "Editorial style approach",
-        "Lifestyle documentation"
+        "Social media videos (Reels, TikTok, Shorts)",
+        "Video editing (with or without own filming)",
+        "Motivational and storytelling videos",
+        "Content strategy consultation",
+        "Platform-specific optimization",
+        "Creative direction and execution"
       ],
-      startingPrice: "From $3,500"
+      startingPrice: "Contact for pricing"
     }
   ];
 
