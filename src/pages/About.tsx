@@ -76,23 +76,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Credentials */}
-          <div className={`fade-in ${isLoaded ? 'visible' : ''} mt-32`} style={{ transitionDelay: '0.6s' }}>
-            <div className="grid md:grid-cols-3 gap-16">
-              <div className="text-center">
-                <div className="serif-display text-4xl text-accent mb-2">10+</div>
-                <p className="text-muted-foreground">Years of Experience</p>
-              </div>
-              <div className="text-center">
-                <div className="serif-display text-4xl text-accent mb-2">200+</div>
-                <p className="text-muted-foreground">Stories Told</p>
-              </div>
-              <div className="text-center">
-                <div className="serif-display text-4xl text-accent mb-2">25+</div>
-                <p className="text-muted-foreground">Countries Visited</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
