@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Play } from 'lucide-react';
-import heroImage from '@/assets/hero-video-placeholder.jpg';
+import heroImage from '@/assets/BGMovie2.mov';
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
