@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Instagram, ArrowRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
-
 const Contact = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
@@ -13,27 +12,22 @@ const Contact = () => {
     service: '',
     message: ''
   });
-
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 300);
     return () => clearTimeout(timer);
   }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Header */}
@@ -57,36 +51,22 @@ const Contact = () => {
         <div className="editorial-layout">
           <div className="grid lg:grid-cols-2 gap-20">
             {/* Contact Form */}
-            <div className={`fade-in ${isLoaded ? 'visible' : ''}`} style={{ transitionDelay: '0.2s' }}>
+            <div className={`fade-in ${isLoaded ? 'visible' : ''}`} style={{
+            transitionDelay: '0.2s'
+          }}>
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-3">
                       Full Name *
                     </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300"
-                    />
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-3">
                       Email Address *
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300"
-                    />
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
                   </div>
                 </div>
 
@@ -95,27 +75,13 @@ const Contact = () => {
                     <label htmlFor="phone" className="block text-sm font-medium mb-3">
                       Phone Number
                     </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300"
-                    />
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
                   </div>
                   <div>
                     <label htmlFor="eventDate" className="block text-sm font-medium mb-3">
                       Event Date
                     </label>
-                    <input
-                      type="date"
-                      id="eventDate"
-                      name="eventDate"
-                      value={formData.eventDate}
-                      onChange={handleChange}
-                      className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300"
-                    />
+                    <input type="date" id="eventDate" name="eventDate" value={formData.eventDate} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
                   </div>
                 </div>
 
@@ -124,26 +90,13 @@ const Contact = () => {
                     <label htmlFor="location" className="block text-sm font-medium mb-3">
                       Event Location
                     </label>
-                    <input
-                      type="text"
-                      id="location"
-                      name="location"
-                      value={formData.location}
-                      onChange={handleChange}
-                      className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300"
-                    />
+                    <input type="text" id="location" name="location" value={formData.location} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
                   </div>
                   <div>
                     <label htmlFor="service" className="block text-sm font-medium mb-3">
                       Service Interested In
                     </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300"
-                    >
+                    <select id="service" name="service" value={formData.service} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300">
                       <option value="">Select a service</option>
                       <option value="wedding">Wedding Film</option>
                       <option value="commercial">Commercial Video</option>
@@ -157,22 +110,10 @@ const Contact = () => {
                   <label htmlFor="message" className="block text-sm font-medium mb-3">
                     Tell us about your vision *
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300 resize-none"
-                    placeholder="Share your story, inspiration, and any specific requirements..."
-                  />
+                  <textarea id="message" name="message" rows={6} value={formData.message} onChange={handleChange} required className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300 resize-none" placeholder="Share your story, inspiration, and any specific requirements..." />
                 </div>
 
-                <button
-                  type="submit"
-                  className="luxury-button w-full md:w-auto inline-flex items-center justify-center space-x-3"
-                >
+                <button type="submit" className="luxury-button w-full md:w-auto inline-flex items-center justify-center space-x-3">
                   <span>Send Inquiry</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
@@ -180,7 +121,9 @@ const Contact = () => {
             </div>
 
             {/* Contact Information */}
-            <div className={`fade-in ${isLoaded ? 'visible' : ''}`} style={{ transitionDelay: '0.4s' }}>
+            <div className={`fade-in ${isLoaded ? 'visible' : ''}`} style={{
+            transitionDelay: '0.4s'
+          }}>
               <div className="space-y-12">
                 <div>
                   <h3 className="serif-display text-3xl mb-6">Get in Touch</h3>
@@ -197,15 +140,15 @@ const Contact = () => {
                   </div>
                   <div className="flex items-center space-x-4">
                     <Phone className="w-5 h-5 text-accent" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+351 930 532 501</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <MapPin className="w-5 h-5 text-accent" />
-                    <span>New York City & Worldwide</span>
+                    <span>Lisbon</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <Instagram className="w-5 h-5 text-accent" />
-                    <span>@emidiofilms</span>
+                    <span>@emidio.films</span>
                   </div>
                 </div>
 
@@ -222,8 +165,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
