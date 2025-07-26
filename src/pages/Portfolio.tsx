@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import weddingImage from '@/assets/wedding-sample.jpg';
 import commercialImage from '@/assets/commercial-sample.jpg';
 
 const Portfolio = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('all');
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -110,6 +112,7 @@ const Portfolio = () => {
                 key={work.id}
                 className={`fade-in ${isLoaded ? 'visible' : ''} group cursor-pointer`}
                 style={{ transitionDelay: `${(index * 0.1) + 0.4}s` }}
+                onClick={() => navigate(`/portfolio/${work.id}`)}
               >
                 <div className="relative overflow-hidden mb-6">
                   <img 
@@ -118,11 +121,18 @@ const Portfolio = () => {
                     className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                  
+                  {/* Play button overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                    </div>
+                  </div>
                 </div>
                 
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <h3 className="serif-display text-2xl">{work.title}</h3>
+                    <h3 className="serif-display text-2xl group-hover:text-accent transition-colors">{work.title}</h3>
                     <span className="text-sm text-muted-foreground">{work.year}</span>
                   </div>
                   <p className="text-muted-foreground">{work.location}</p>
