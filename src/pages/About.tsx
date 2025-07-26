@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import ContactCTA from '@/components/ContactCTA';
-import emidioPortrait from '@/assets/emidio-portrait.jpg';
+import emidioPortrait from '@/assets/Gaspar.jpeg';
 
 const About = () => {
   const [isLoaded, setIsLoaded] = useState(false);
