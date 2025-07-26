@@ -113,6 +113,14 @@ export default {
 						transform: 'translateY(0)'
 					}
 				},
+				'cinematic-fade': {
+					'0%': {
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '1'
+					}
+				},
 				'scale-hover': {
 					'0%': {
 						transform: 'scale(1)'
@@ -127,6 +135,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s cubic-bezier(0.23, 1, 0.32, 1)',
 				'fade-in-slow': 'fade-in-slow 1.2s cubic-bezier(0.23, 1, 0.32, 1)',
+				'cinematic-fade': 'cinematic-fade 2s ease-out',
 				'scale-hover': 'scale-hover 0.4s cubic-bezier(0.23, 1, 0.32, 1)'
 			}
 		}

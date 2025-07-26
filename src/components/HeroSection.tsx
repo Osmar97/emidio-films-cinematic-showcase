@@ -32,9 +32,25 @@ const HeroSection = () => {
       {/* Loading Screen */}
       {!isVideoLoaded && (
         <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
-          <div className="text-center text-white">
-            <div className="w-16 h-16 border-4 border-white/20 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-lg font-light tracking-wide">Loading...</p>
+          {/* Subtle vignette effect */}
+          <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/10"></div>
+          
+          {/* Film grain texture */}
+          <div 
+            className="absolute inset-0 opacity-[0.02] mix-blend-overlay"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E")`,
+            }}
+          ></div>
+          
+          {/* Main title */}
+          <div className="relative text-center">
+            <h1 
+              className="font-serif italic text-6xl md:text-8xl lg:text-9xl text-[#e5e5e5] tracking-[0.15em] font-normal animate-cinematic-fade"
+              style={{ fontFeatureSettings: '"kern" 1, "liga" 1' }}
+            >
+              EMIDIO FILMS
+            </h1>
           </div>
         </div>
       )}
