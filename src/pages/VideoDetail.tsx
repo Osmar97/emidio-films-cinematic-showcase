@@ -107,19 +107,20 @@ const VideoDetail = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      {/* Back Button */}
+    <>
+      {/* Back Button - Fixed to viewport */}
       <div className="fixed top-20 left-8 z-50">
         <button
           onClick={() => navigate('/portfolio')}
-          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group bg-background/80 backdrop-blur-sm px-3 py-2 rounded-md"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
           <span className="text-sm tracking-wide">Back to Portfolio</span>
         </button>
       </div>
+
+      <div className="min-h-screen">
+        <Navigation />
 
       {/* Video Section */}
       <section className="pt-32 pb-20">
@@ -206,9 +207,9 @@ const VideoDetail = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 };
 
