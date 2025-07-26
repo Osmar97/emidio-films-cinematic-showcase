@@ -111,7 +111,7 @@ const VideoDetail = () => {
       <Navigation />
       
       {/* Back Button */}
-      <div className="fixed top-20 left-8 z-20">
+      <div className="fixed top-20 left-8 z-50">
         <button
           onClick={() => navigate('/portfolio')}
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
