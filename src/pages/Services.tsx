@@ -13,43 +13,64 @@ const Services = () => {
 
   const services = [
     {
-      title: "Real Estate Video & Photography",
-      description: "Professional real estate content that showcases properties at their best",
+      title: "Fotografia de Imóvel",
+      description: "Sessão fotográfica profissional com edição otimizada, ideal para anúncios em plataformas imobiliárias",
       features: [
-        "Real estate video filming and editing",
-        "Aerial drone footage capture",
-        "Real estate photography",
-        "Property walkthroughs",
-        "Aerial perspectives",
-        "Professional editing and color grading"
+        "Fotografia profissional de alta qualidade",
+        "Edição otimizada para plataformas imobiliárias",
+        "Ângulos estratégicos para destacar o imóvel",
+        "Correção de cor e luz profissional",
+        "Entrega rápida e eficiente"
       ],
-      startingPrice: "Contact for pricing"
+      startingPrice: "A partir de 80€"
     },
     {
-      title: "Brand & Business Videos",
-      description: "Promotional content that elevates your brand and drives results",
+      title: "Vídeo Imobiliário",
+      description: "Filmagens walkthrough do imóvel, tanto internas quanto externas, com edição dinâmica",
       features: [
-        "Promotional videos for brands and local businesses",
-        "Product photography and videography",
-        "Brand storytelling",
-        "Commercial content creation",
-        "Professional concept development",
-        "Multi-platform optimization"
+        "Filmagem walkthrough interna e externa",
+        "Edição dinâmica e profissional",
+        "Música licenciada incluída",
+        "Movimentos de câmera suaves",
+        "Destaque dos pontos fortes do imóvel"
       ],
-      startingPrice: "Contact for pricing"
+      startingPrice: "A partir de 110€"
     },
     {
-      title: "Social Media & Creative Content",
-      description: "Engaging content designed for modern digital platforms",
+      title: "Drone",
+      description: "Filmagens aéreas de alta qualidade, perfeitas para destacar imóveis, terrenos ou áreas envolventes",
       features: [
-        "Social media videos (Reels, TikTok, Shorts)",
-        "Video editing (with or without own filming)",
-        "Motivational and storytelling videos",
-        "Content strategy consultation",
-        "Platform-specific optimization",
-        "Creative direction and execution"
+        "Filmagem aérea de alta qualidade",
+        "Perspectivas únicas e impactantes",
+        "Ideal para imóveis e terrenos",
+        "Captação das áreas envolventes",
+        "Edição profissional incluída"
       ],
-      startingPrice: "Contact for pricing"
+      startingPrice: "A partir de 110€"
+    },
+    {
+      title: "Sessão Completa + Vídeo Walkthrough",
+      description: "Sessão fotográfica completa combinada com vídeo walkthrough editado",
+      features: [
+        "Fotografia profissional completa",
+        "Vídeo walkthrough editado",
+        "Cobertura interior e exterior",
+        "Edição profissional de ambos",
+        "Pacote económico e completo"
+      ],
+      startingPrice: "180€"
+    },
+    {
+      title: "Pacote Premium (Foto + Vídeo + Drone)",
+      description: "Cobertura completa: fotografia profissional, vídeo walkthrough editado e filmagem aérea com drone",
+      features: [
+        "Fotografia profissional completa",
+        "Vídeo walkthrough editado",
+        "Filmagem aérea com drone",
+        "Edição profissional de todo o conteúdo",
+        "Cobertura 360° do imóvel"
+      ],
+      startingPrice: "270€"
     }
   ];
 
