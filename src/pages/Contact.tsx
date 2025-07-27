@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Instagram, ArrowRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 const Contact = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,10 +20,42 @@ const Contact = () => {
     const timer = setTimeout(() => setIsLoaded(true), 300);
     return () => clearTimeout(timer);
   }, []);
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-inquiry', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Inquiry sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        eventDate: '',
+        location: '',
+        service: '',
+        message: ''
+      });
+    } catch (error: any) {
+      console.error('Error sending inquiry:', error);
+      toast({
+        title: "Error sending inquiry",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -113,8 +149,12 @@ const Contact = () => {
                   <textarea id="message" name="message" rows={6} value={formData.message} onChange={handleChange} required className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300 resize-none" placeholder="Share your story, inspiration, and any specific requirements..." />
                 </div>
 
-                <button type="submit" className="luxury-button w-full md:w-auto inline-flex items-center justify-center space-x-3">
-                  <span>Send Inquiry</span>
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="luxury-button w-full md:w-auto inline-flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <span>{isSubmitting ? 'Sending...' : 'Send Inquiry'}</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </form>
