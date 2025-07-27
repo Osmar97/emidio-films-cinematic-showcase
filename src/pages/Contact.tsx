@@ -6,7 +6,9 @@ import { useToast } from '@/hooks/use-toast';
 const Contact = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,17 +25,17 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      const { data, error } = await supabase.functions.invoke('send-inquiry', {
+      const {
+        data,
+        error
+      } = await supabase.functions.invoke('send-inquiry', {
         body: formData
       });
-
       if (error) throw error;
-
       toast({
         title: "Inquiry sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you within 24 hours."
       });
 
       // Reset form
@@ -51,7 +53,7 @@ const Contact = () => {
       toast({
         title: "Error sending inquiry",
         description: "Please try again or contact us directly.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
@@ -149,11 +151,7 @@ const Contact = () => {
                   <textarea id="message" name="message" rows={6} value={formData.message} onChange={handleChange} required className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300 resize-none" placeholder="Share your story, inspiration, and any specific requirements..." />
                 </div>
 
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="luxury-button w-full md:w-auto inline-flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
+                <button type="submit" disabled={isSubmitting} className="luxury-button w-full md:w-auto inline-flex items-center justify-center space-x-3 disabled:opacity-50 disabled:cursor-not-allowed">
                   <span>{isSubmitting ? 'Sending...' : 'Send Inquiry'}</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
@@ -176,14 +174,9 @@ const Contact = () => {
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <Mail className="w-5 h-5 text-accent" />
-                    <span>hello@emidiofilms.com</span>
+                    <span>Emidiofilms@gmail.com</span>
                   </div>
-                  <a 
-                    href="https://wa.me/351930532501" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-4 hover:text-accent transition-colors cursor-pointer"
-                  >
+                  <a href="https://wa.me/351930532501" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-accent transition-colors cursor-pointer">
                     <Phone className="w-5 h-5 text-accent" />
                     <span>+351 930 532 501</span>
                   </a>
