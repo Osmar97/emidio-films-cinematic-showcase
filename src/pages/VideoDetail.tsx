@@ -44,7 +44,7 @@ const VideoDetail = () => {
       category: "Commercial",
       image: commercialImage,
       videoFile: "Barber.mov",
-      location: "New York",
+      location: "Lisboa",
       year: "2024", 
       duration: "2:15",
       description: "Luxury timepiece campaign showcasing the craftsmanship and heritage of Swiss watchmaking. Shot in the heart of Manhattan with dramatic lighting and precise cinematography.",
@@ -160,13 +160,13 @@ const VideoDetail = () => {
         <div className="editorial-layout">
           <div className={`fade-in ${isLoaded ? 'visible' : ''}`}>
             {/* Video Player */}
-            <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-12 group">
+            <div className="relative w-full h-[70vh] sm:h-[80vh] bg-black rounded-lg overflow-hidden mb-12 group">
               {videoUrl ? (
                 <video 
                   ref={videoRef}
                   src={videoUrl}
                   poster={video.image}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
                   onEnded={() => setIsPlaying(false)}

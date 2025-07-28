@@ -35,7 +35,7 @@ const Portfolio = () => {
       title: "BarberShop",
       category: "commercial",
       image: commercialImage,
-      location: "New York",
+      location: "Lisboa",
       year: "2024"
     },
     {
