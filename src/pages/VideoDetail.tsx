@@ -43,7 +43,7 @@ const VideoDetail = () => {
       title: "Heritage Collection",
       category: "Commercial",
       image: commercialImage,
-      videoFile: "heritage-collection-commercial.mp4", // Add your video file path here
+      videoFile: "barber.mov",
       location: "New York",
       year: "2024", 
       duration: "2:15",
