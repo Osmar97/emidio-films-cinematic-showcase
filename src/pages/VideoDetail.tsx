@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Play, Pause } from 'lucide-react';
 import Navigation from '@/components/Navigation';
+import { supabase } from '@/integrations/supabase/client';
 import weddingImage from '@/assets/wedding-sample.jpg';
 import commercialImage from '@/assets/commercial-sample.jpg';
 
@@ -10,6 +11,8 @@ const VideoDetail = () => {
   const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 300);
@@ -23,6 +26,7 @@ const VideoDetail = () => {
       title: "Sophia & Marcus",
       category: "Wedding Film",
       image: weddingImage,
+      videoFile: "sophia-marcus-wedding.mp4", // Add your video file path here
       location: "Tuscany, Italy",
       year: "2024",
       duration: "4:32",
@@ -39,6 +43,7 @@ const VideoDetail = () => {
       title: "Heritage Collection",
       category: "Commercial",
       image: commercialImage,
+      videoFile: "heritage-collection-commercial.mp4", // Add your video file path here
       location: "New York",
       year: "2024", 
       duration: "2:15",
@@ -55,6 +60,7 @@ const VideoDetail = () => {
       title: "Elena & James",
       category: "Wedding Film",
       image: weddingImage,
+      videoFile: "elena-james-santorini.mp4", // Add your video file path here
       location: "Santorini, Greece",
       year: "2023",
       duration: "5:18",
@@ -71,6 +77,7 @@ const VideoDetail = () => {
       title: "Luxury Timepieces",
       category: "Commercial",
       image: commercialImage,
+      videoFile: "luxury-timepieces-milan.mp4", // Add your video file path here
       location: "Milan",
       year: "2023",
       duration: "1:45",
@@ -85,6 +92,25 @@ const VideoDetail = () => {
   ];
 
   const video = videos.find(v => v.id === parseInt(id || '0'));
+
+  // Load video from Supabase storage
+  useEffect(() => {
+    const loadVideo = async () => {
+      if (video?.videoFile) {
+        try {
+          const { data } = supabase.storage
+            .from('videos')
+            .getPublicUrl(video.videoFile);
+          
+          setVideoUrl(data.publicUrl);
+        } catch (error) {
+          console.error('Error loading video:', error);
+        }
+      }
+    };
+
+    loadVideo();
+  }, [video]);
 
   if (!video) {
     return (
@@ -103,7 +129,14 @@ const VideoDetail = () => {
   }
 
   const handlePlayPause = () => {
-    setIsPlaying(!isPlaying);
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
   };
 
   return (
@@ -128,11 +161,24 @@ const VideoDetail = () => {
           <div className={`fade-in ${isLoaded ? 'visible' : ''}`}>
             {/* Video Player */}
             <div className="relative aspect-video bg-black rounded-lg overflow-hidden mb-12 group">
-              <img 
-                src={video.image}
-                alt={video.title}
-                className="w-full h-full object-cover"
-              />
+              {videoUrl ? (
+                <video 
+                  ref={videoRef}
+                  src={videoUrl}
+                  poster={video.image}
+                  className="w-full h-full object-cover"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  onEnded={() => setIsPlaying(false)}
+                  preload="metadata"
+                />
+              ) : (
+                <img 
+                  src={video.image}
+                  alt={video.title}
+                  className="w-full h-full object-cover"
+                />
+              )}
               
               {/* Play/Pause Overlay */}
               <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
