@@ -23,10 +23,10 @@ const VideoDetail = () => {
   const videos = [
     {
       id: 1,
-      title: "Sophia & Marcus",
+      title: "Real Estate Movie",
       category: "Wedding Film",
       image: weddingImage,
-      videoFile: "sophia-marcus-wedding.mp4", // Add your video file path here
+      videoFile: "realEstate.mov", // Add your video file path here
       location: "Tuscany, Italy",
       year: "2024",
       duration: "4:32",
@@ -40,7 +40,7 @@ const VideoDetail = () => {
     },
     {
       id: 2,
-      title: "Heritage Collection",
+      title: "BarberShop",
       category: "Commercial",
       image: commercialImage,
       videoFile: "Barber.mov",

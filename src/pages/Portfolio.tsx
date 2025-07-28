@@ -16,7 +16,7 @@ const Portfolio = () => {
 
   const categories = [
     { id: 'all', label: 'All Work' },
-    { id: 'weddings', label: 'Weddings' },
+    { id: 'Real Estate', label: 'Real Estate' },
     { id: 'commercial', label: 'Commercial' },
     { id: 'photography', label: 'Photography' }
   ];
@@ -24,15 +24,15 @@ const Portfolio = () => {
   const works = [
     {
       id: 1,
-      title: "Sophia & Marcus",
-      category: "weddings",
+      title: "Real Estate House",
+      category: "Real Estate",
       image: weddingImage,
       location: "Tuscany, Italy",
       year: "2024"
     },
     {
       id: 2,
-      title: "Heritage Collection",
+      title: "BarberShop",
       category: "commercial",
       image: commercialImage,
       location: "New York",
@@ -41,7 +41,7 @@ const Portfolio = () => {
     {
       id: 3,
       title: "Elena & James",
-      category: "weddings",
+      category: "Real Estate",
       image: weddingImage,
       location: "Santorini, Greece",
       year: "2023"
