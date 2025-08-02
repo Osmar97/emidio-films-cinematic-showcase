@@ -165,7 +165,6 @@ const VideoDetail = () => {
                 <video 
                   ref={videoRef}
                   src={videoUrl}
-                  poster={video.image}
                   className="w-full h-full object-contain"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
@@ -173,11 +172,9 @@ const VideoDetail = () => {
                   preload="metadata"
                 />
               ) : (
-                <img 
-                  src={video.image}
-                  alt={video.title}
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full flex items-center justify-center bg-black">
+                  <span className="text-white text-lg">Loading video...</span>
+                </div>
               )}
               
               {/* Play/Pause Overlay */}
