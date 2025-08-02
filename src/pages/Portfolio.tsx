@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
-import EmidioLogoV from '@/assets/Emidio.png';
+import EmidioLogoV from '@/assets/EmidioF.png';
 
 const Portfolio = () => {
   const navigate = useNavigate();
