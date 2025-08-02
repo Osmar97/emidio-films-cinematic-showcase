@@ -3,8 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Play, Pause } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { supabase } from '@/integrations/supabase/client';
-import EmidioLogoV from '@/assets/wedding-sample.jpg';
-import EmidioLogoV from '@/assets/commercial-sample.jpg';
+import EmidioLogoV from '@/assets/EmidioF.png';
+
 
 const VideoDetail = () => {
   const { id } = useParams<{ id: string }>();
