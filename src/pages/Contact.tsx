@@ -12,10 +12,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    eventDate: '',
-    location: '',
-    service: '',
+    subject: '',
     message: ''
   });
   useEffect(() => {
@@ -42,10 +39,7 @@ const Contact = () => {
       setFormData({
         name: '',
         email: '',
-        phone: '',
-        eventDate: '',
-        location: '',
-        service: '',
+        subject: '',
         message: ''
       });
     } catch (error: any) {
@@ -108,40 +102,11 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-3">
-                      Phone Number
-                    </label>
-                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
-                  </div>
-                  <div>
-                    <label htmlFor="eventDate" className="block text-sm font-medium mb-3">
-                      Event Date
-                    </label>
-                    <input type="date" id="eventDate" name="eventDate" value={formData.eventDate} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="location" className="block text-sm font-medium mb-3">
-                      Event Location
-                    </label>
-                    <input type="text" id="location" name="location" value={formData.location} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
-                  </div>
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium mb-3">
-                      Service Interested In
-                    </label>
-                    <select id="service" name="service" value={formData.service} onChange={handleChange} className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300">
-                      <option value="">Select a service</option>
-                      <option value="wedding">Wedding Film</option>
-                      <option value="commercial">Commercial Video</option>
-                      <option value="photography">Editorial Photography</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium mb-3">
+                    Subject *
+                  </label>
+                  <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-0 py-3 border-0 border-b border-border bg-transparent focus:border-accent focus:outline-none transition-colors duration-300" />
                 </div>
 
                 <div>
