@@ -176,7 +176,7 @@ const Contact = () => {
                     <Mail className="w-5 h-5 text-accent" />
                     <span>Emidiofilms@gmail.com</span>
                   </div>
-                  <a href="https://wa.me/351930532501" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-accent transition-colors cursor-pointer">
+                  <a href="wa.link/csfcdz" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-accent transition-colors cursor-pointer">
                     <Phone className="w-5 h-5 text-accent" />
                     <span>+351 930 532 501</span>
                   </a>
@@ -184,10 +184,10 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-accent" />
                     <span>Lisbon</span>
                   </div>
-                  <div className="flex items-center space-x-4">
+                  <a href="https://www.instagram.com/emidio.films?igsh=MWtnN3RoZjI4djRzMg==" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-accent transition-colors cursor-pointer">
                     <Instagram className="w-5 h-5 text-accent" />
                     <span>@emidio.films</span>
-                  </div>
+                  </a>
                 </div>
 
                 <div className="pt-8 border-t border-border">
