@@ -3,8 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Play, Pause } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { supabase } from '@/integrations/supabase/client';
-import weddingImage from '@/assets/wedding-sample.jpg';
-import commercialImage from '@/assets/commercial-sample.jpg';
+import EmidioLogoV from '@/assets/wedding-sample.jpg';
+import EmidioLogoV from '@/assets/commercial-sample.jpg';
 
 const VideoDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,7 +25,7 @@ const VideoDetail = () => {
       id: 1,
       title: "Real Estate Movie",
       category: "Wedding Film",
-      image: weddingImage,
+      image: EmidioLogoV,
       videoFile: "realEstate.mov", // Add your video file path here
       location: "Tuscany, Italy",
       year: "2024",
@@ -42,7 +42,7 @@ const VideoDetail = () => {
       id: 2,
       title: "BarberShop",
       category: "Commercial",
-      image: commercialImage,
+      image: EmidioLogoV,
       videoFile: "Barber.mov",
       location: "Lisboa",
       year: "2024", 
@@ -59,7 +59,7 @@ const VideoDetail = () => {
       id: 3,
       title: "Parque das Naçoes",
       category: "Real Estate",
-      image: weddingImage,
+      image: EmidioLogoV,
       videoFile: "Realestate1.mov", // Add your video file path here
       location: "Santorini, Greece",
       year: "2023",
@@ -76,7 +76,7 @@ const VideoDetail = () => {
       id: 4,
       title: "House n3",
       category: "Real Estate",
-      image: commercialImage,
+      image: EmidioLogoV,
       videoFile: "Realestate3.mov", // Add your video file path here
       location: "Milan",
       year: "2023",

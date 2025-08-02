@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
-import weddingImage from '@/assets/wedding-sample.jpg';
-import commercialImage from '@/assets/commercial-sample.jpg';
+import EmidioLogoV from '@/assets/Emidio.png';
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -24,9 +23,9 @@ const Portfolio = () => {
   const works = [
     {
       id: 1,
-      title: "Real Estate House",
+      title: "House 1",
       category: "Real Estate",
-      image: weddingImage,
+      image: EmidioLogoV,
       location: "Tuscany, Italy",
       year: "2024"
     },
@@ -34,23 +33,23 @@ const Portfolio = () => {
       id: 2,
       title: "BarberShop",
       category: "commercial",
-      image: commercialImage,
+      image: EmidioLogoV,
       location: "Lisboa",
       year: "2024"
     },
     {
       id: 3,
-      title: "Elena & James",
+      title: "House n2",
       category: "Real Estate",
-      image: weddingImage,
+      image: EmidioLogoV,
       location: "Santorini, Greece",
       year: "2023"
     },
     {
       id: 4,
-      title: "Luxury Timepieces",
-      category: "commercial",
-      image: commercialImage,
+      title: "House n3",
+      category: "Real Estate",
+      image: EmidioLogoV,
       location: "Milan",
       year: "2023"
     }

@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import weddingImage from '@/assets/wedding-sample.jpg';
-import commercialImage from '@/assets/commercial-sample.jpg';
+import EmidioLogoV from '@/assets/wedding-sample.jpg';
+import EmidioLogoV from '@/assets/commercial-sample.jpg';
 
 const FeaturedWork = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,14 +30,14 @@ const FeaturedWork = () => {
       id: 1,
       title: "Sophia & Marcus",
       category: "Wedding Film",
-      image: weddingImage,
+      image: EmidioLogoV,
       location: "Tuscany, Italy"
     },
     {
       id: 2,
       title: "Heritage Collection",
       category: "Commercial",
-      image: commercialImage,
+      image: EmidioLogoV,
       location: "New York"
     }
   ];
