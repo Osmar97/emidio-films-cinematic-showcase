@@ -57,8 +57,8 @@ const VideoDetail = () => {
     },
     {
       id: 3,
-      title: "Elena & James",
-      category: "Wedding Film",
+      title: "Parque das Naçoes",
+      category: "Real Estate",
       image: weddingImage,
       videoFile: "Realestate1.mov", // Add your video file path here
       location: "Santorini, Greece",
@@ -74,10 +74,10 @@ const VideoDetail = () => {
     },
     {
       id: 4,
-      title: "Luxury Timepieces",
-      category: "Commercial",
+      title: "House n3",
+      category: "Real Estate",
       image: commercialImage,
-      videoFile: "luxury-timepieces-milan.mp4", // Add your video file path here
+      videoFile: "Realestate3.mov", // Add your video file path here
       location: "Milan",
       year: "2023",
       duration: "1:45",
