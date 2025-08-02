@@ -165,7 +165,7 @@ const VideoDetail = () => {
                 <video 
                   ref={videoRef}
                   src={videoUrl}
-                  className="w-full h-full object-contain rotate-[120deg]"
+                  className="w-full h-full object-contain rotate-180"
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
                   onEnded={() => setIsPlaying(false)}
