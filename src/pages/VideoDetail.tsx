@@ -60,7 +60,7 @@ const VideoDetail = () => {
       title: "Elena & James",
       category: "Wedding Film",
       image: weddingImage,
-      videoFile: "Realestate1", // Add your video file path here
+      videoFile: "Realestate1.mov", // Add your video file path here
       location: "Santorini, Greece",
       year: "2023",
       duration: "5:18",
