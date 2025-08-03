@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import EmidioLogoV from '@/assets/wedding-sample.jpg';
-import EmidioLogoV from '@/assets/commercial-sample.jpg';
+import EmidioLogoV from '@/assets/EmidioF.png';
 
 const FeaturedWork = () => {
   const [isVisible, setIsVisible] = useState(false);
