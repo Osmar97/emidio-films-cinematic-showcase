@@ -198,9 +198,9 @@ const VideoDetail = () => {
             </div>
 
             {/* Video Details */}
-            <div className="grid lg:grid-cols-3 gap-16">
+            <div>
               {/* Main Content */}
-              <div className="lg:col-span-2 space-y-8">
+              <div className="space-y-8">
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-sm text-accent uppercase tracking-wide">{video.category}</span>
@@ -217,35 +217,6 @@ const VideoDetail = () => {
                   <p className="text-muted-foreground leading-relaxed text-lg">
                     {video.description}
                   </p>
-                </div>
-              </div>
-
-              {/* Technical Details */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-medium mb-6">Production Details</h3>
-                  <div className="space-y-4">
-                    {Object.entries(video.details).map(([key, value]) => (
-                      <div key={key} className="flex flex-col">
-                        <span className="text-sm text-muted-foreground uppercase tracking-wide mb-1">
-                          {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
-                        </span>
-                        <span className="text-foreground">{value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-border">
-                  <h3 className="text-lg font-medium mb-4">Share This Film</h3>
-                  <div className="flex gap-4">
-                    <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Copy Link
-                    </button>
-                    <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      Download
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
