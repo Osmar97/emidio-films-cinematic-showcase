@@ -68,7 +68,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "Emidio Films <onboarding@resend.dev>",
-      to: ["Emidiofilms@gmail.com"],
+      to: ["emidiofilms@gmail.com"],
       replyTo: inquiryData.email,
       subject: `New Inquiry from ${inquiryData.name}${inquiryData.service ? ` - ${inquiryData.service}` : ''}`,
       html: htmlContent,
