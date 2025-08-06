@@ -91,12 +91,7 @@ const FeaturedWork = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="serif-display text-2xl">{work.title}</h3>
-                      <span className="text-sm text-muted-foreground uppercase tracking-wide">
-                        {work.category}
-                      </span>
-                    </div>
+                    <h3 className="serif-display text-2xl">{work.title}</h3>
                     <p className="text-muted-foreground">{work.location}</p>
                   </div>
                 </Link>
