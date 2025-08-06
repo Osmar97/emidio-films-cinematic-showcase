@@ -27,17 +27,24 @@ const FeaturedWork = () => {
   const works = [
     {
       id: 1,
-      title: "Sophia & Marcus",
-      category: "Wedding Film",
+      title: "Tour Imobiliário – Casa no Pinhal Novo",
+      category: "Real Estate",
       image: EmidioLogoV,
-      location: "Tuscany, Italy"
+      location: "Pinhal Novo"
     },
     {
       id: 2,
-      title: "Heritage Collection",
+      title: "Institutional – Barbershop",
       category: "Commercial",
       image: EmidioLogoV,
-      location: "New York"
+      location: "Lisboa"
+    },
+    {
+      id: 3,
+      title: "Completed Project – Full Interiors",
+      category: "Real Estate",
+      image: EmidioLogoV,
+      location: "Lisboa"
     }
   ];
 
