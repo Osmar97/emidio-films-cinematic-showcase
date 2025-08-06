@@ -23,16 +23,16 @@ const VideoDetail = () => {
   const videos = [
     {
       id: 1,
-      title: "Real Estate Movie",
-      category: "Wedding Film",
+      title: "Tour Imobiliário – Casa no Pinhal Novo",
+      category: "Real Estate",
       image: EmidioLogoV,
       videoFile: "realEstate.mov", // Add your video file path here
-      location: "Tuscany, Italy",
+      location: "Pinhal Novo",
       year: "2024",
       duration: "4:32",
-      description: "A timeless love story captured in the rolling hills of Tuscany. Sophia and Marcus celebrated their union surrounded by vineyards and ancient olive groves, creating memories that will last a lifetime.",
+      description: "Registo visual completo de uma propriedade situada no Pinhal Novo, captando a essência do espaço com detalhes de luz, ângulos amplos e um toque cinematográfico. Ideal para divulgação imobiliária com impacto.",
       details: {
-        venue: "Villa San Crispolto",
+        venue: "Casa no Pinhal Novo",
         cinematographer: "Emidio Films",
         colorGrade: "Cinematic Film",
         equipment: "RED Komodo 6K, DJI FPV"

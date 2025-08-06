@@ -23,10 +23,10 @@ const Portfolio = () => {
   const works = [
     {
       id: 1,
-      title: "House 1",
+      title: "Tour Imobiliário – Casa no Pinhal Novo",
       category: "Real Estate",
       image: EmidioLogoV,
-      location: "Tuscany, Italy",
+      location: "Pinhal Novo",
       year: "2024"
     },
     {
