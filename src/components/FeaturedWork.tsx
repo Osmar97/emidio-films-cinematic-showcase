@@ -80,7 +80,7 @@ const FeaturedWork = () => {
                 className={`fade-in ${isVisible ? 'visible' : ''}`}
                 style={{ transitionDelay: `${index * 0.2}s` }}
               >
-                <div className="group cursor-pointer">
+                <Link to={`/portfolio/${work.id}`} className="group cursor-pointer block">
                   <div className="relative overflow-hidden mb-6">
                     <img 
                       src={work.image}
@@ -99,7 +99,7 @@ const FeaturedWork = () => {
                     </div>
                     <p className="text-muted-foreground">{work.location}</p>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
