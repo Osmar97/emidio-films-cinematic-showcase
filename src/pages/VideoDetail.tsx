@@ -23,10 +23,10 @@ const VideoDetail = () => {
   const videos = [
     {
       id: 1,
-      title: "Tour Imobiliário – Casa no Pinhal Novo",
+      title: "Tour Imobiliário",
       category: "Real Estate",
       image: EmidioLogoV,
-      videoFile: "realEstate.mov", // Add your video file path here
+      videoFile: "realEstate.mov", 
       location: "Pinhal Novo",
       year: "2024",
       duration: "4:32",
@@ -44,7 +44,7 @@ const VideoDetail = () => {
       category: "Commercial",
       image: EmidioLogoV,
       videoFile: "Barber.mov",
-      location: "Lisboa",
+      location: "Lisbon",
       year: "2024", 
       duration: "2:15",
       description: "Institutional video showcasing the routine and atmosphere of a modern barbershop: from reception to service. Humanized filming, focusing on professionals, the space, and the client experience.",
@@ -61,7 +61,7 @@ const VideoDetail = () => {
       category: "Real Estate",
       image: EmidioLogoV,
       videoFile: "Realestate1.mov", // Add your video file path here
-      location: "Lisboa",
+      location: "Lisbon",
       year: "2023",
       duration: "5:18",
       description: "Production made to document the final result of a complete project: modern kitchen, custom furniture for bathroom and laundry, all finished with elegance and precision. A video that values detail, finishing and space harmony, highlighting the assembly company's work in a visually impactful and professional way.",
@@ -74,14 +74,14 @@ const VideoDetail = () => {
     },
     {
       id: 4,
-      title: "House n3",
+      title: "Cozinha Moderna – Projeto Finalizado",
       category: "Real Estate",
       image: EmidioLogoV,
       videoFile: "Realestate3.mov", // Add your video file path here
-      location: "Milan",
+      location: "Lisbon",
       year: "2023",
       duration: "1:45",
-      description: "Product showcase for Italian luxury watchmaker featuring macro cinematography and dynamic lighting to highlight the intricate mechanical details.",
+      description: "Institutional video produced for a kitchen assembly company, capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
       details: {
         client: "Milano Luxury",
         cinematographer: "Emidio Films", 

@@ -23,7 +23,7 @@ const Portfolio = () => {
   const works = [
     {
       id: 1,
-      title: "Tour Imobiliário – Casa no Pinhal Novo",
+      title: "Tour Imobiliário",
       category: "Real Estate",
       image: EmidioLogoV,
       location: "Pinhal Novo",
@@ -34,7 +34,7 @@ const Portfolio = () => {
       title: "Institutional – Barbershop",
       category: "commercial",
       image: EmidioLogoV,
-      location: "Lisboa",
+      location: "Lisbon",
       year: "2024"
     },
     {
@@ -42,15 +42,15 @@ const Portfolio = () => {
       title: "Completed Project – Full Interiors",
       category: "Real Estate",
       image: EmidioLogoV,
-      location: "Lisboa",
+      location: "Lisbon",
       year: "2023"
     },
     {
       id: 4,
-      title: "House n3",
+      title: "Cozinha Moderna – Projeto Finalizado",
       category: "Real Estate",
       image: EmidioLogoV,
-      location: "Milan",
+      location: "Lisbon",
       year: "2023"
     }
   ];
