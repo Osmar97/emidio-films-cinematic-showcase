@@ -40,16 +40,16 @@ const VideoDetail = () => {
     },
     {
       id: 2,
-      title: "BarberShop",
+      title: "Institutional – Barbershop",
       category: "Commercial",
       image: EmidioLogoV,
       videoFile: "Barber.mov",
       location: "Lisboa",
       year: "2024", 
       duration: "2:15",
-      description: "Luxury timepiece campaign showcasing the craftsmanship and heritage of Swiss watchmaking. Shot in the heart of Manhattan with dramatic lighting and precise cinematography.",
+      description: "Institutional video showcasing the routine and atmosphere of a modern barbershop: from reception to service. Humanized filming, focusing on professionals, the space, and the client experience.",
       details: {
-        client: "Heritage Watches",
+        client: "Modern Barbershop",
         cinematographer: "Emidio Films",
         colorGrade: "Commercial Standard",
         equipment: "Arri Alexa Mini, Zeiss Master Primes"

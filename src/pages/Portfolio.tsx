@@ -31,7 +31,7 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "BarberShop",
+      title: "Institutional – Barbershop",
       category: "commercial",
       image: EmidioLogoV,
       location: "Lisboa",
