@@ -17,7 +17,8 @@ const Portfolio = () => {
     { id: 'all', label: 'All Work' },
     { id: 'Real Estate', label: 'Real Estate' },
     { id: 'commercial', label: 'Commercial' },
-    { id: 'photography', label: 'Photography' }
+    { id: 'photography', label: 'Photography' },
+    { id: 'Aniversário', label: 'Aniversário' }
   ];
 
   const works = [
@@ -43,7 +44,7 @@ const Portfolio = () => {
       category: "Real Estate",
       image: EmidioLogoV,
       location: "Lisbon",
-      year: "2023"
+      year: "2025"
     },
     {
       id: 4,
@@ -51,7 +52,23 @@ const Portfolio = () => {
       category: "Real Estate",
       image: EmidioLogoV,
       location: "Lisbon",
-      year: "2023"
+      year: "2025"
+    },
+    {
+      id: 5,
+      title: "Primeiro Aniversário",
+      category: "Aniversário",
+      image: EmidioLogoV,
+      location: "Lisbon",
+      year: "2024"
+    },
+    {
+      id: 6,
+      title: "Institucional – Concessionária & Destaque BYD",
+      category: "commercial",
+      image: EmidioLogoV,
+      location: "Lisbon",
+      year: "2025"
     }
   ];
 

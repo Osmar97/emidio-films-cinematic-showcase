@@ -88,6 +88,40 @@ const VideoDetail = () => {
         colorGrade: "Luxury Gold",
         equipment: "Blackmagic Pocket 6K Pro, Macro Lenses"
       }
+    },
+    {
+      id: 5,
+      title: "Primeiro Aniversário",
+      category: "Aniversário",
+      image: EmidioLogoV,
+      videoFile: "birthday.mov", // Add your video file path here
+      location: "Lisbon",
+      year: "2023",
+      duration: "1:45",
+      description: "Institutional video produced for a kitchen assembly company, capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
+      details: {
+        client: "Milano Luxury",
+        cinematographer: "Emidio Films", 
+        colorGrade: "Luxury Gold",
+        equipment: "Blackmagic Pocket 6K Pro, Macro Lenses"
+      }
+    },
+    {
+      id: 6,
+      title: "Institucional – Concessionária & Destaque BYD",
+      category: "Commercial",
+      image: EmidioLogoV,
+      videoFile: "Car.mov",
+      location: "Lisbon",
+      year: "2023",
+      duration: "1:45",
+      description: "Institutional video produced for a kitchen assembly company, capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
+      details: {
+        client: "Milano Luxury",
+        cinematographer: "Emidio Films", 
+        colorGrade: "Luxury Gold",
+        equipment: "Blackmagic Pocket 6K Pro, Macro Lenses"
+      }
     }
   ];
 
