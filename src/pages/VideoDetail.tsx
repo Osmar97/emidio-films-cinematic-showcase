@@ -57,18 +57,18 @@ const VideoDetail = () => {
     },
     {
       id: 3,
-      title: "Parque das Naçoes",
+      title: "Completed Project – Full Interiors",
       category: "Real Estate",
       image: EmidioLogoV,
       videoFile: "Realestate1.mov", // Add your video file path here
-      location: "Santorini, Greece",
+      location: "Lisboa",
       year: "2023",
       duration: "5:18",
-      description: "An intimate destination wedding overlooking the Aegean Sea. Elena and James exchanged vows as the sun set over the iconic blue domes of Santorini.",
+      description: "Production made to document the final result of a complete project: modern kitchen, custom furniture for bathroom and laundry, all finished with elegance and precision. A video that values detail, finishing and space harmony, highlighting the assembly company's work in a visually impactful and professional way.",
       details: {
-        venue: "Canaves Oia Suites",
+        venue: "Interior Design Project",
         cinematographer: "Emidio Films",
-        colorGrade: "Mediterranean Warmth",
+        colorGrade: "Modern Clean",
         equipment: "Sony FX9, DJI Air 2S"
       }
     },

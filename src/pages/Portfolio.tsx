@@ -39,10 +39,10 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "House n2",
+      title: "Completed Project – Full Interiors",
       category: "Real Estate",
       image: EmidioLogoV,
-      location: "Santorini, Greece",
+      location: "Lisboa",
       year: "2023"
     },
     {
