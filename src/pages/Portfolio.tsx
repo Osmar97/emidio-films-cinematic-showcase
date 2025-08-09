@@ -77,7 +77,11 @@ const Portfolio = () => {
       category: "photography",
       image: "/lovable-uploads/3861137d-d523-4c35-ae8e-1fcdc9c7b884.png",
       location: "Lisbon",
-      year: "2024"
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/3861137d-d523-4c35-ae8e-1fcdc9c7b884.png", alt: "Modern Kitchen Design" }
+      ]
     },
     {
       id: 8,
@@ -85,7 +89,11 @@ const Portfolio = () => {
       category: "photography",
       image: "/lovable-uploads/eddbdea2-ade9-46cb-b312-110da2589188.png",
       location: "Lisbon",
-      year: "2024"
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/eddbdea2-ade9-46cb-b312-110da2589188.png", alt: "Luxury Bathroom" }
+      ]
     },
     {
       id: 9,
@@ -93,7 +101,11 @@ const Portfolio = () => {
       category: "photography",
       image: "/lovable-uploads/3eb014d2-6655-43c3-a6c5-c34e52d26f43.png",
       location: "Lisbon",
-      year: "2024"
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/3eb014d2-6655-43c3-a6c5-c34e52d26f43.png", alt: "Contemporary Living Space" }
+      ]
     },
     {
       id: 10,
@@ -101,7 +113,11 @@ const Portfolio = () => {
       category: "photography",
       image: "/lovable-uploads/01490bb8-896b-4cfd-8c42-60b40c1ae105.png",
       location: "Lisbon",
-      year: "2024"
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/01490bb8-896b-4cfd-8c42-60b40c1ae105.png", alt: "Automotive Interior" }
+      ]
     },
     {
       id: 11,
@@ -109,7 +125,11 @@ const Portfolio = () => {
       category: "photography",
       image: "/lovable-uploads/4ce6a192-244f-4b9e-b8cb-44b3a4589f15.png",
       location: "Lisbon",
-      year: "2024"
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/4ce6a192-244f-4b9e-b8cb-44b3a4589f15.png", alt: "BYD Dashboard Detail" }
+      ]
     },
     {
       id: 12,
@@ -117,7 +137,11 @@ const Portfolio = () => {
       category: "photography",
       image: "/lovable-uploads/b3595b8c-ab4b-4da2-938a-4d8b75559a70.png",
       location: "Lisbon",
-      year: "2024"
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/b3595b8c-ab4b-4da2-938a-4d8b75559a70.png", alt: "Modern Bathroom Design" }
+      ]
     },
     {
       id: 13,
