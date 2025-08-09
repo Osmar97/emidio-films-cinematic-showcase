@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
+import ImageGallery from '@/components/ImageGallery';
 import EmidioLogoV from '@/assets/EmidioF.png';
 
 const Portfolio = () => {
@@ -117,6 +118,35 @@ const Portfolio = () => {
       image: "/lovable-uploads/b3595b8c-ab4b-4da2-938a-4d8b75559a70.png",
       location: "Lisbon",
       year: "2024"
+    },
+    {
+      id: 13,
+      title: "Kitchen Collection",
+      category: "photography",
+      image: "/lovable-uploads/0a046e99-1b48-4fbc-ae29-c90fd7662fd5.png",
+      location: "Lisbon",
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/0a046e99-1b48-4fbc-ae29-c90fd7662fd5.png", alt: "Modern Kitchen with Island" },
+        { src: "/lovable-uploads/c57ee302-dd18-4ccc-ab1a-31078689d7d8.png", alt: "Linear Kitchen Design" },
+        { src: "/lovable-uploads/e7d2dcda-67bb-4541-9046-84aa35bc97d1.png", alt: "Kitchen and Living Integration" },
+        { src: "/lovable-uploads/618205c7-73c6-434c-87b5-804803b53b0d.png", alt: "Kitchen Detail with Wood Cabinets" }
+      ]
+    },
+    {
+      id: 14,
+      title: "Automotive Photography",
+      category: "photography",
+      image: "/lovable-uploads/4dc560f0-b80d-4022-bd4e-77a20f06d9f2.png",
+      location: "Lisbon",
+      year: "2024",
+      isGallery: true,
+      galleryImages: [
+        { src: "/lovable-uploads/4dc560f0-b80d-4022-bd4e-77a20f06d9f2.png", alt: "White Car Detail" },
+        { src: "/lovable-uploads/c04f49cc-5439-4e4f-adf6-a18656287825.png", alt: "White Car Full View" },
+        { src: "/lovable-uploads/042fa59f-7773-46f9-8f9b-8252ee85b1cf.png", alt: "Car Interior Detail" }
+      ]
     }
   ];
 
@@ -174,25 +204,38 @@ const Portfolio = () => {
             {filteredWorks.map((work, index) => (
               <div 
                 key={work.id}
-                className={`fade-in ${isLoaded ? 'visible' : ''} group cursor-pointer`}
+                className={`fade-in ${isLoaded ? 'visible' : ''} group`}
                 style={{ transitionDelay: `${(index * 0.1) + 0.4}s` }}
-                onClick={() => navigate(`/portfolio/${work.id}`)}
               >
-                <div className="relative overflow-hidden mb-6">
-                  <img 
-                    src={work.image}
-                    alt={work.title}
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+                {work.isGallery ? (
+                  <ImageGallery
+                    images={work.galleryImages}
+                    coverImage={work.image}
+                    title={work.title}
+                    className="mb-6"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
-                  
-                  {/* Play button overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                      <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                ) : (
+                  <div 
+                    className="cursor-pointer"
+                    onClick={() => navigate(`/portfolio/${work.id}`)}
+                  >
+                    <div className="relative overflow-hidden mb-6">
+                      <img 
+                        src={work.image}
+                        alt={work.title}
+                        className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+                      
+                      {/* Play button overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
                 
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
