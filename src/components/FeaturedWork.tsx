@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import EmidioLogoV from '@/assets/EmidioF.png';
+import { supabase } from '@/integrations/supabase/client';
 
 const FeaturedWork = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [videoUrls, setVideoUrls] = useState<{ [key: number]: string }>({});
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -24,29 +25,32 @@ const FeaturedWork = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Featured works data (videos)
   const works = [
-    {
-      id: 1,
-      title: "Tour Imobiliário – Casa no Pinhal Novo",
-      category: "Real Estate",
-      image: EmidioLogoV,
-      location: "Pinhal Novo"
-    },
-    {
-      id: 2,
-      title: "Institutional – Barbershop",
-      category: "Commercial",
-      image: EmidioLogoV,
-      location: "Lisboa"
-    },
-    {
-      id: 3,
-      title: "Completed Project – Full Interiors",
-      category: "Real Estate",
-      image: EmidioLogoV,
-      location: "Lisboa"
-    }
+    { id: 1, title: "Tour Imobiliário – Casa no Pinhal Novo", category: "Real Estate", videoFile: "realEstate.mov", location: "Pinhal Novo" },
+    { id: 2, title: "Institutional – Barbershop", category: "Commercial", videoFile: "Barber.mov", location: "Lisboa" },
+    { id: 3, title: "Completed Project – Full Interiors", category: "Real Estate", videoFile: "Realestate1.mov", location: "Lisboa" }
   ];
+
+  // Load video URLs from Supabase
+  useEffect(() => {
+    const loadVideoUrls = async () => {
+      const urls: { [key: number]: string } = {};
+      for (const work of works) {
+        if (work.videoFile) {
+          try {
+            const { data } = supabase.storage.from('videos').getPublicUrl(work.videoFile);
+            if (data.publicUrl) urls[work.id] = data.publicUrl;
+          } catch (error) {
+            console.error(`Error loading video ${work.videoFile}:`, error);
+          }
+        }
+      }
+      setVideoUrls(urls);
+    };
+
+    loadVideoUrls();
+  }, []);
 
   return (
     <section ref={sectionRef} className="py-32 bg-background">
@@ -82,12 +86,28 @@ const FeaturedWork = () => {
               >
                 <Link to={`/portfolio/${work.id}`} className="group cursor-pointer block">
                   <div className="relative overflow-hidden mb-6">
-                    <img 
-                      src={work.image}
-                      alt={work.title}
-                      className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    {videoUrls[work.id] ? (
+                      <video
+                        src={videoUrls[work.id]}
+                        className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+                        preload="metadata"
+                        poster={videoUrls[work.id]}
+                        muted
+                      />
+                    ) : (
+                      <div className="w-full aspect-[4/3] flex items-center justify-center bg-black">
+                        <span className="text-white">Loading...</span>
+                      </div>
+                    )}
+
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+
+                    {/* Play button overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                      </div>
+                    </div>
                   </div>
                   
                   <div className="space-y-2">
