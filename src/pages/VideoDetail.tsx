@@ -3,8 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Play, Pause } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import { supabase } from '@/integrations/supabase/client';
-import EmidioLogoV from '@/assets/EmidioF.png';
-
 
 const VideoDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,13 +17,12 @@ const VideoDetail = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Mock video data - in a real app this would come from an API
+  // Mock video data sem imagens
   const videos = [
     {
       id: 1,
       title: "Tour Imobiliário",
       category: "Real Estate",
-      image: EmidioLogoV,
       videoFile: "realEstate.mov", 
       location: "Pinhal Novo",
       year: "2024",
@@ -42,7 +39,6 @@ const VideoDetail = () => {
       id: 2,
       title: "Institutional – Barbershop",
       category: "Commercial",
-      image: EmidioLogoV,
       videoFile: "Barber.mov",
       location: "Lisbon",
       year: "2024", 
@@ -59,8 +55,7 @@ const VideoDetail = () => {
       id: 3,
       title: "Completed Project – Full Interiors",
       category: "Real Estate",
-      image: EmidioLogoV,
-      videoFile: "Realestate1.mov", // Add your video file path here
+      videoFile: "Realestate1.mov",
       location: "Lisbon",
       year: "2023",
       duration: "5:18",
@@ -76,12 +71,11 @@ const VideoDetail = () => {
       id: 4,
       title: "Cozinha Moderna – Projeto Finalizado",
       category: "Real Estate",
-      image: EmidioLogoV,
-      videoFile: "Realestate3.mov", // Add your video file path here
+      videoFile: "Realestate3.mov",
       location: "Lisbon",
       year: "2023",
       duration: "1:45",
-      description: "Institutional video produced for a kitchen assembly company, capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
+      description: "Institutional video produced for a kitchen assembly company, capturing the finished kitchen from all angles, with ênfase em finishes, lighting and integration with the surrounding space.",
       details: {
         client: "Milano Luxury",
         cinematographer: "Emidio Films", 
@@ -93,12 +87,11 @@ const VideoDetail = () => {
       id: 5,
       title: "Primeiro Aniversário",
       category: "Aniversário",
-      image: EmidioLogoV,
-      videoFile: "birthday.mov", // Add your video file path here
+      videoFile: "birthday.mov",
       location: "Lisbon",
       year: "2023",
       duration: "1:45",
-      description: "Institutional video produced for a kitchen assembly company, capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
+      description: "Institutional video capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
       details: {
         client: "Milano Luxury",
         cinematographer: "Emidio Films", 
@@ -110,12 +103,11 @@ const VideoDetail = () => {
       id: 6,
       title: "Institucional – Concessionária & Destaque BYD",
       category: "Commercial",
-      image: EmidioLogoV,
       videoFile: "Car.mov",
       location: "Lisbon",
       year: "2023",
       duration: "1:45",
-      description: "Institutional video produced for a kitchen assembly company, capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
+      description: "Institutional video capturing the finished kitchen from all angles, with emphasis on finishes, lighting and integration with the surrounding space.",
       details: {
         client: "Milano Luxury",
         cinematographer: "Emidio Films", 
@@ -175,7 +167,7 @@ const VideoDetail = () => {
 
   return (
     <>
-      {/* Back Button - Fixed to viewport */}
+      {/* Back Button */}
       <div className="fixed top-20 left-8 z-50">
         <button
           onClick={() => navigate('/portfolio')}
@@ -189,74 +181,75 @@ const VideoDetail = () => {
       <div className="min-h-screen">
         <Navigation />
 
-      {/* Video Section */}
-      <section className="pt-32 pb-20">
-        <div className="editorial-layout">
-          <div className={`fade-in ${isLoaded ? 'visible' : ''}`}>
-            {/* Video Player */}
-            <div className="relative w-full h-[70vh] sm:h-[80vh] bg-black rounded-lg overflow-hidden mb-12 group">
-              {videoUrl ? (
-                <video 
-                  ref={videoRef}
-                  src={videoUrl}
-                  className="w-full h-full object-contain [transform:rotate(360deg)]"
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                  onEnded={() => setIsPlaying(false)}
-                  preload="metadata"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center bg-black">
-                  <span className="text-white text-lg">Loading video...</span>
-                </div>
-              )}
-              
-              {/* Play/Pause Overlay */}
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button
-                  onClick={handlePlayPause}
-                  className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
-                >
-                  {isPlaying ? (
-                    <Pause className="w-8 h-8 text-white" />
-                  ) : (
-                    <Play className="w-8 h-8 text-white ml-1" />
-                  )}
-                </button>
-              </div>
-              
-              {/* Video Info Overlay */}
-              <div className="absolute bottom-6 left-6 text-white">
-                <div className="text-sm opacity-80">{video.duration}</div>
-              </div>
-            </div>
-
-            {/* Video Details */}
-            <div>
-              {/* Main Content */}
-              <div className="space-y-8">
-                <div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="text-sm text-accent uppercase tracking-wide">{video.category}</span>
-                    <span className="text-sm text-muted-foreground">{video.year}</span>
+        {/* Video Section */}
+        <section className="pt-32 pb-20">
+          <div className="editorial-layout">
+            <div className={`fade-in ${isLoaded ? 'visible' : ''}`}>
+              {/* Video Player */}
+              <div className="relative w-full h-[70vh] sm:h-[80vh] bg-black rounded-lg overflow-hidden mb-12 group">
+                {videoUrl ? (
+                  <video 
+                    ref={videoRef}
+                    src={videoUrl}
+                    className="w-full h-full object-contain [transform:rotate(360deg)]"
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                    onEnded={() => setIsPlaying(false)}
+                    preload="metadata"
+                    playsInline
+                    poster={videoUrl}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-black">
+                    <span className="text-white text-lg">Loading video...</span>
                   </div>
-                  <h1 className="serif-display text-5xl md:text-6xl mb-4 font-light">
-                    {video.title}
-                  </h1>
-                  <p className="text-xl text-muted-foreground mb-6">{video.location}</p>
+                )}
+                
+                {/* Play/Pause Overlay */}
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button
+                    onClick={handlePlayPause}
+                    className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                  >
+                    {isPlaying ? (
+                      <Pause className="w-8 h-8 text-white" />
+                    ) : (
+                      <Play className="w-8 h-8 text-white ml-1" />
+                    )}
+                  </button>
                 </div>
+                
+                {/* Video Info Overlay */}
+                <div className="absolute bottom-6 left-6 text-white">
+                  <div className="text-sm opacity-80">{video.duration}</div>
+                </div>
+              </div>
 
-                <div>
-                  <h3 className="text-xl font-medium mb-4">About This Film</h3>
-                  <p className="text-muted-foreground leading-relaxed text-lg">
-                    {video.description}
-                  </p>
+              {/* Video Details */}
+              <div>
+                <div className="space-y-8">
+                  <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="text-sm text-accent uppercase tracking-wide">{video.category}</span>
+                      <span className="text-sm text-muted-foreground">{video.year}</span>
+                    </div>
+                    <h1 className="serif-display text-5xl md:text-6xl mb-4 font-light">
+                      {video.title}
+                    </h1>
+                    <p className="text-xl text-muted-foreground mb-6">{video.location}</p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-medium mb-4">About This Film</h3>
+                    <p className="text-muted-foreground leading-relaxed text-lg">
+                      {video.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
       </div>
     </>
   );
